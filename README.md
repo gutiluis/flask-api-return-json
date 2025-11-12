@@ -28,4 +28,4 @@ This is a simple Flask application that serves an HTML form and returns a JSON r
 - python3 -m venv venv
 - source venv/bin/activate
 - pip install -r requirements.txt
-
+- python flask_api.py
