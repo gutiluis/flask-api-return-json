@@ -46,4 +46,4 @@ This is a simple Flask application that serves an HTML form and returns a JSON r
 ##
 
 clone:
-git clone https://github.com/gutiluis/flask-api-return-json
+git clone https://github.com/gutiluis/flask-api-return-json.git
