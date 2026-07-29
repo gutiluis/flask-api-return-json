@@ -47,3 +47,10 @@ clone
 ```
 git clone https://github.com/gutiluis/flask-api-return-json
 ```
+
+---
+
+### License
+
+[MIT LICENSE](LICENSE)
+
