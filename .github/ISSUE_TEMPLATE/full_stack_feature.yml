@@ -37,6 +37,7 @@ body:
     attributes:
       label: User Authentication & Permissions
       description: Does this feature require specific auth rules, roles, or scopes?
+      # dropdown
       options:
         - Public (No auth required)
         - Authenticated User (Standard login)
@@ -102,6 +103,18 @@ body:
         - E2E / UI Tests: Critical user path coverage
     validations:
       required: false
+
+  - type: textarea
+    id: documentation-updates
+    attributes:
+      label: Documentation Updates
+      description: Detail what documentation needs to be created or updated (e.g., API docs, README, environment setup).
+      placeholder: |
+        - Update README.md with new endpoint instructions
+        - Document new request/response payloads in API docs
+    validations:
+      required: false
+
   # group of one or more checkboxes. saved as markdown checkbox. supports interactive updating
   - type: checkboxes
     id: acceptance-criteria
