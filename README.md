@@ -1,7 +1,7 @@
 >[!WARNING]
 >CURRENTLY UNDER DEVELOPMENT
 
-# Flask API Return JSON from HTML Forms
+# Flask API Return JSON from HTML Forms App
 
 Flask application that serves an HTML form and returns a JSON response when the form is submitted through a **POST** request, showing form data, headers, files, raw request body, JSON body, client IP, and URL in the jsonify response.
 
