@@ -31,6 +31,7 @@ body:
       placeholder: "https://figma.com/file/... or https://linear.app/..."
     validations:
       required: false
+  
   # users can select their answer from options defined by the maintainer
   - type: dropdown
     id: auth-requirement
@@ -45,6 +46,7 @@ body:
         - API Token / Scoped Access
     validations:
       required: true
+
   # multiple-line form input fields. similar to inputs
   - type: textarea
     id: db-implementation
@@ -73,22 +75,24 @@ body:
   - type: textarea
     id: frontend-implementation
     attributes:
-      label: Frontend Implementation
+      label: Frontend & Jekyll Demo Implementation
       description: Describe the UI components, state management, and user flows.
       placeholder: |
-        - Components: New form widget, dashboard table
-        - State/Hooks: Redux slice or React Query mutation
+        - Components: New form widget on Jekyll demo page
+        - Api Integration: Fetch calls pointing to production Flask backend
     validations:
       required: false
 
   - type: textarea
     id: env-config
     attributes:
-      label: Environment Variables & Configuration
-      description: List any new `.env` variables, third-party services, or feature flags required.
+      label: Environment Variables, Configuration & Production Server
+      description: List `.env` variables, GitHub Pages settings, third-party services, production WSGI server (GUNICORN) config or feature flags required.
       placeholder: |
-        - `STRIPE_API_KEY` (Secret)
-        - `NEXT_PUBLIC_FEATURE_FLAG_X` (Boolean)
+        - `FLASK_API_BASE_URL` (COORS/Production URL)
+        - `requirements.txt` update: Add `gunicorn`
+        - Procfile: `web: gunicorn app:app`
+        - Jekyll config updates (`_config.yml)
     validations:
       required: false
 
@@ -96,11 +100,11 @@ body:
     id: testing-strategy
     attributes:
       label: Testing Strategy
-      description: Describe how this feature will be verified (Unit, Integration, E2E).
+      description: Describe how this feature will be verified (Unit, Integration, E2E, Live Demo check).
       placeholder: |
         - Unit Tests: Service layer logic validation
         - API Tests: Endpoint status codes and response contracts
-        - E2E / UI Tests: Critical user path coverage
+        - Live Demo: Verify Github Pages Jekyll build succeeds and talks to backend
     validations:
       required: false
 
@@ -125,8 +129,12 @@ body:
         - label: Database migrations created and tested
         - label: API endpoints implemented, secured, and documented
         - label: Authentication & permission logic enforced
+        - label: Input validation, sanitization, and authorization rules tested against abuse cases.
         - label: Frontend UI components built, styled, and integrated
+        - Label: Github Pages / Jekyll live demo site update and deployed successfully
+        - label: Production server configured and tested
         - label: Environment variables and config documented for deployment
+        - label: Documentation updates written and reviewed (README/API specs)
         - label: Unit, integration, or E2E tests written and passing
     validations:
       required: true
